@@ -16,6 +16,12 @@ func init() {
 func main() {
 	r := gin.Default()
 	r.LoadHTMLGlob("src/html/*")
+	r.GET("/register", func(c *gin.Context) {
+		c.HTML(200, "register.html", gin.H{
+			//"phrase": "c'est moi aurelie",
+			//"title":  "test",
+		})
+	})
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(200, "index.html", gin.H{
 			"phrase": "c'est moi aurelie",
